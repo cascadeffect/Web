@@ -3,54 +3,7 @@
 <head>
     <title>SWE - AWS</title>
     <meta charset="UTF-8">
-    <style>
-        /* CSS 선택자 우선순위: id(#) > class(.) > tag */
-        body {
-            margin: 0;
-        }
-        /* inline element */
-        a {
-            color: black;
-            text-decoration: none;
-        }
-        /* block level element */
-        h1 {
-            border-bottom: 1px solid gray;
-            font-size: 45px;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        #active {
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        #grid {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-        }
-        #grid #list {
-            border-right: 1px solid gray;
-            padding: 0 20px;
-        }
-        #grid #article {
-            padding: 0 20px;
-        }
-        /* if screen width < 800px */
-        @media(max-width: 800px) {
-            #grid {
-            display: block;
-            }
-            #grid #list {
-                border-right: none;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-            h1 {
-                border-bottom: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1><a href="index.html">What I learned</a></h1>
