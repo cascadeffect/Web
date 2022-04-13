@@ -5,40 +5,79 @@
     <meta charset="UTF-8">
     <style>
         /* CSS 선택자 우선순위: id(#) > class(.) > tag */
-        #active {
-            text-decoration: underline;
+        body {
+            margin: 0;
         }
-        .saw {
-            color: gray;
-        }
+        /* inline element */
         a {
             color: black;
             text-decoration: none;
         }
+        /* block level element */
         h1 {
+            border-bottom: 1px solid gray;
             font-size: 45px;
             text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #active {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #grid #list {
+            border-right: 1px solid gray;
+            padding: 0 20px;
+        }
+        #grid #article {
+            padding: 0 20px;
+        }
+        /* if screen width < 800px */
+        @media(max-width: 800px) {
+            #grid {
+            display: block;
+            }
+            #grid #list {
+                border-right: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            h1 {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
 <body>
-
-<h1><a href="index.html">What I learned</a></h1>
-<h2><a href="swe.html">SWE</a></h2>
-<ol>
-    <li><a href="aws.html" class="saw" id="active"><strong>AWS</strong></a></li>
-    <li><a href="git.html">Git</a></li>
-    <li><a href="github.html">GitHub</a></li>
-    <li><a href="docker.html">Docker</a></li>
-</ol>
-<h2><a href="web.html">WEB</a></h2>
-<ol>
-    <li><a href="html.html">HTML</a></li>
-    <li><a href="css.html">CSS</a></li>
-    <li><a href="js.html">JavaScript</a></li>
-</ol>
-
-<h3>SWE - AWS</h3>
-Amazon Web Services, Inc. (AWS) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis. These cloud computing web services provide a variety of basic abstract technical infrastructure and distributed computing building blocks and tools. One of these services is Amazon Elastic Compute Cloud (EC2), which allows users to have at their disposal a virtual cluster of computers, available all the time, through the Internet. AWS's virtual computers emulate most of the attributes of a real computer, including hardware central processing units (CPUs) and graphics processing units (GPUs) for processing; local/RAM memory; hard-disk/SSD storage; a choice of operating systems; networking; and pre-loaded application software such as web servers, databases, and customer relationship management (CRM).
+    <h1><a href="index.html">What I learned</a></h1>
+    <div id="grid">
+        <div id="list">
+            <div>
+                <h3><a href="swe.html">SWE</a></h3>
+                <ol>
+                    <li><a href="aws.html" id="active">AWS</a></li>
+                    <li><a href="git.html">Git</a></li>
+                    <li><a href="github.html">GitHub</a></li>
+                    <li><a href="docker.html">Docker</a></li>
+                </ol>
+            </div>
+            <div>
+                <h3><a href="web.html">Web</a></h3>
+                <ol>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="js.html">JavaScript</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="article">
+            <h2>AWS</h2>
+            Amazon Web Services, Inc. (<a href="https://aws.amazon.com/" target="_blank" title="aws.amazon.com" style="text-decoration: underline;color: blue">AWS</a>) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis. These cloud computing web services provide a variety of basic abstract technical infrastructure and distributed computing building blocks and tools. One of these services is Amazon Elastic Compute Cloud (EC2), which allows users to have at their disposal a virtual cluster of computers, available all the time, through the Internet. AWS's virtual computers emulate most of the attributes of a real computer, including hardware central processing units (CPUs) and graphics processing units (GPUs) for processing; local/RAM memory; hard-disk/SSD storage; a choice of operating systems; networking; and pre-loaded application software such as web servers, databases, and customer relationship management (CRM).
+        </div>
+    </div>
 </body>
 </html>

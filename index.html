@@ -4,34 +4,77 @@
     <title>What I learned - Welcome</title>
     <meta charset="UTF-8">
     <style>
+        /* CSS 선택자 우선순위: id(#) > class(.) > tag */
+        body {
+            margin: 0;
+        }
+        /* inline element */
         a {
             color: black;
             text-decoration: none;
         }
+        /* block level element */
         h1 {
+            border-bottom: 1px solid gray;
             font-size: 45px;
             text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #grid #list {
+            border-right: 1px solid gray;
+            padding: 0 20px;
+        }
+        #grid #article {
+            padding: 0 20px;
+        }
+        /* if screen width < 800px */
+        @media(max-width: 800px) {
+            #grid {
+            display: block;
+            }
+            #grid #list {
+                border-right: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            h1 {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
 <body>
-
-<h1><a href="index.html">What I learned</a></h1>
-<h2><a href="swe.html">SWE</a></h2>
-<ol>
-    <li><a href="aws.html">AWS</a></li>
-    <li><a href="git.html">Git</a></li>
-    <li><a href="github.html">GitHub</a></li>
-    <li><a href="docker.html">Docker</a></li>
-</ol>
-<h2><a href="web.html">WEB</a></h2>
-<ol>
-    <li><a href="html.html">HTML</a></li>
-    <li><a href="css.html">CSS</a></li>
-    <li><a href="js.html">JavaScript</a></li>
-</ol>
-
-<h3>Index</h3>
-Welcome to my first website!
+    <h1><a href="index.html">What I learned</a></h1>
+    <div id="grid">
+        <div id="list">
+            <div>
+                <h3><a href="swe.html">SWE</a></h3>
+                <ol>
+                    <li><a href="aws.html">AWS</a></li>
+                    <li><a href="git.html">Git</a></li>
+                    <li><a href="github.html">GitHub</a></li>
+                    <li><a href="docker.html">Docker</a></li>
+                </ol>
+            </div>
+            <div>
+                <h3><a href="web.html">Web</a></h3>
+                <ol>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="js.html">JavaScript</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="article">
+            <h2>Index</h2>
+            Welcome to my first website!<br>
+                <img src="coding.jpg" width="100%">
+        </div>
+    </div>
 </body>
 </html>

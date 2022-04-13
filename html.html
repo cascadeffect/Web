@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WEB - HTML</title>
+    <title>Web - HTML</title>
     <meta charset="UTF-8">
     <style>
         /* CSS 선택자 우선순위: id(#) > class(.) > tag */
-        #active {
-            text-decoration: underline;
+        body {
+            margin: 0;
         }
-        .saw {
-            color: gray;
-        }
+        /* inline element */
         a {
             color: black;
             text-decoration: none;
         }
+        /* block level element */
         h1 {
+            border-bottom: 1px solid gray;
             font-size: 45px;
             text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #active {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #grid #list {
+            border-right: 1px solid gray;
+            padding: 0 20px;
+        }
+        #grid #article {
+            padding: 0 20px;
+        }
+        /* if screen width < 800px */
+        @media(max-width: 800px) {
+            #grid {
+            display: block;
+            }
+            #grid #list {
+                border-right: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            h1 {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
 <body>
-
-<h1><a href="index.html">What I learned</a></h1>
-<h2><a href="swe.html">SWE</a></h2>
-<ol>
-    <li><a href="aws.html">AWS</a></li>
-    <li><a href="git.html">Git</a></li>
-    <li><a href="github.html">GitHub</a></li>
-    <li><a href="docker.html">Docker</a></li>
-</ol>
-<h2><a href="web.html">WEB</a></h2>
-<ol>
-    <li><a href="html.html" class="saw" id="active"><strong>HTML</strong></a></li>
-    <li><a href="css.html">CSS</a></li>
-    <li><a href="js.html">JavaScript</a></li>
-</ol>
-
-<h3>WEB - HTML</h3>
-<p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="_blank" title="html5 specification">The HyperText Markup Language</a> or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
-    <img src="coding.jpg" width="100%"> <!-- 속성 -->
-</p><p">Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
-</p><p style="margin-top:40px"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7T7r_oSp0SE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-
+    <h1><a href="index.html">What I learned</a></h1>
+    <div id="grid">
+        <div id="list">
+            <div>
+                <h3><a href="swe.html">SWE</a></h3>
+                <ol>
+                    <li><a href="aws.html">AWS</a></li>
+                    <li><a href="git.html">Git</a></li>
+                    <li><a href="github.html">GitHub</a></li>
+                    <li><a href="docker.html">Docker</a></li>
+                </ol>
+            </div>
+            <div>
+                <h3><a href="web.html">Web</a></h3>
+                <ol>
+                    <li><a href="html.html" id="active">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="js.html">JavaScript</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="article">
+            <h2>HTML</h2>
+            <p>The HyperText Markup Language or <a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="_blank" title="HTML specification" style="text-decoration: underline;color: blue">HTML</a> is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+            </p><p">Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+            </p><p style="margin-top:40px"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7T7r_oSp0SE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        </div>
+    </div>
 </body>
 </html>
