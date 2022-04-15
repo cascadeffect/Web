@@ -4,33 +4,36 @@
     <title>Web</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="colors.js"></script>
 </head>
 <body>
-<h1><a href="index.html">What I learned</a></h1>
-<div id="grid">
-    <div id="list">
-        <div>
-            <h3><a href="swe.html">SWE</a></h3>
-            <ol>
-                <li><a href="aws.html">AWS</a></li>
-                <li><a href="git.html">Git</a></li>
-                <li><a href="github.html">GitHub</a></li>
-                <li><a href="docker.html">Docker</a></li>
-            </ol>
+    <input type="button" value="dark" onclick="darkMode(this);">
+    <h1><a href="index.html">What I learned</a></h1>
+    <div id="grid">
+        <div id="list">
+            <div>
+                <h3><a href="swe.html">SWE</a></h3>
+                <ol>
+                    <li><a href="aws.html">AWS</a></li>
+                    <li><a href="git.html">Git</a></li>
+                    <li><a href="github.html">GitHub</a></li>
+                    <li><a href="docker.html">Docker</a></li>
+                </ol>
+            </div>
+            <div>
+                <h3><a href="web.html" id="active">Web</a></h3>
+                <ol>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="js.html">JavaScript</a></li>
+                </ol>
+            </div>
         </div>
-        <div>
-            <h3><a href="web.html" id="active">Web</a></h3>
-            <ol>
-                <li><a href="html.html">HTML</a></li>
-                <li><a href="css.html">CSS</a></li>
-                <li><a href="js.html">JavaScript</a></li>
-            </ol>
+        <div id="article">
+            <h2>Web</h2>
+            The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform. It was originally a hypertext document management system accessed over the Internet.
         </div>
     </div>
-    <div id="article">
-        <h2>Web</h2>
-        The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform. It was originally a hypertext document management system accessed over the Internet.
-    </div>
-</div>
 </body>
 </html>
