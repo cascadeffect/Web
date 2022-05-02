@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SWE</title>
+    <title>SWE - Docker</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../src/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="colors.js"></script>
+    <script src="../src/js/colors.js"></script>
+    </style>
 </head>
 <body>
     <input type="button" value="dark" onclick="darkMode(this);">
-    <h1><a href="index.html">What I learned</a></h1>
+    <h1><a href="../index.html">What I learned</a></h1>
     <div id="grid">
         <div id="list">
             <div>
-                <h3><a href="swe.html" id="active">SWE</a></h3>
+                <h3><a href="swe.html">SWE</a></h3>
                 <ol>
                     <li><a href="aws.html">AWS</a></li>
                     <li><a href="git.html">Git</a></li>
                     <li><a href="github.html">GitHub</a></li>
-                    <li><a href="docker.html">Docker</a></li>
+                    <li><a href="docker.html" id="active">Docker</a></li>
                 </ol>
             </div>
             <div>
@@ -31,8 +32,8 @@
             </div>
         </div>
         <div id="article">
-            <h2>SWE</h2>
-            Software engineering (SWE) is an engineering approach on a software development of systematics application.
+            <h2>Docker</h2>
+            <a id="specification" href="https://en.wikipedia.org/wiki/Docker_(software)/" target="_blank" title="Docker specification" style="text-decoration: underline;color: blue">Docker</a> is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc.
         </div>
     </div>
 </body>

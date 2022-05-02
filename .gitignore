@@ -1,6 +1,7 @@
 .DS_Store
 
 # 연습용 파일
+others/
 ex_grid.html
 ex_input.html
 ex_loop.html
